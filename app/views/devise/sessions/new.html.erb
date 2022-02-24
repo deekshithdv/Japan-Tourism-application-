@@ -1,21 +1,32 @@
-<div class="card mx-auto text-center border-radius" style="width: 20rem; background-color:#FBF9F9;margin-top:40px;border-radius:5%;">
-<div style="padding:20px">
-<h2 style="color:#CC0066;">Login</h2><br/>
+<head>
+  <style>
+    #authcard {
+      width: 20rem; 
+      background-color:#FBF9F9;
+      margin-top:40px;
+      border-radius:5%;
+      }
+  </style>
+</head>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", class: "form-control"%>
-  </div><br/>
+<div class="card mx-auto text-center" id="authcard">
+  <div style="padding:20px">
+    <h2 style="color:#CC0066;">Login</h2><br/>
 
-  <div>
-    <%= f.password_field :password, autocomplete: "current-password", placeholder:"Password", class: "form-control"%>
-  </div><br/>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", class: "form-control"%>
+    </div><br/>
 
-  <div>
-    <%= f.submit "Log in", class:"btn btn-primary"%>
+    <div>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder:"Password", class: "form-control"%>
+    </div><br/>
+
+    <div>
+      <%= f.submit "Log in", class:"btn btn-primary"%>
+    </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-</div>
 </div>
