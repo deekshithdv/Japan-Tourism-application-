@@ -16,7 +16,7 @@
   </form>
   <a class="nav-item">
     <% if current_user %>
-      <%= link_to "Edit profile", edit_user_registration_path, class: "edit-profile" %>
+      <%= link_to "profile", profile_path(current_user.id), class: "nav-link" %>
     <% end %>
     <%= link_to "Logout" , destroy_user_session_path, method: :delete, class: "nav-link" %>
   </a>
