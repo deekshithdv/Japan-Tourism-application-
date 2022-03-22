@@ -1,0 +1,22 @@
+<%= form_with(model: @post) do |form| %>
+  <div class="row">
+    <div class="span6 offset3">
+    <%= form.label :files %>
+   <%= form.file_field :files, multiple: true %>
+  </div>
+
+<div class="span6 offset3">
+   <%= form.label :title %>
+    <%= form.text_area :title %>
+    
+    <%= form.label :caption %>
+    <%= form.text_area :caption %>
+
+    <%= form.label :location %>
+    <%= form.text_area :location %>
+    <%= form.text_field :user_id, value: current_user.id, class:'d-none'%>
+</div>
+
+  </div>
+  <%= form.submit "Create Post", class: "btn btn-large btn-primary" %>
+<% end %>

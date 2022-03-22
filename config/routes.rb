@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root 'users#home'
 
   get "profile/:id"=> "users#profile",  as:  :profile
+  resources :posts, only: [:new, :create, :show , :destroy]
 end

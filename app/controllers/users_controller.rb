@@ -4,6 +4,8 @@ class UsersController < ApplicationController
     end
 
     def profile
+        # user profile 
+        @post = @user.posts.all
     end
 
     def set_user
