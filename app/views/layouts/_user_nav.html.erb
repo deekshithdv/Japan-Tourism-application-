@@ -1,12 +1,15 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li>
+      <a class="nav-item"> 
+        <%= link_to "New post", new_post_path, class: "nav-link" %>
+      </a>
+    </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         Sort by
       </a>
-      <a class="nav-item">
-        <%= link_to "New post", new_post_path, class: "nav-link" %>
-      </a>
+      
       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
         <li><a class="dropdown-item" href="#">Most liked place</a></li>
         <li><a class="dropdown-item" href="#">Recently posted</a></li>
@@ -18,9 +21,7 @@
     <button class="btn btn-outline-success" type="submit">Search</button>
   </form>
   <a class="nav-item">
-    <% if current_user %>
-      <%= link_to "profile", profile_path(current_user.id), class: "nav-link" %>
-    <% end %>
-    <%= link_to "Logout" , destroy_user_session_path, method: :delete, class: "nav-link" %>
+      <%= link_to raw("<i class=\"fa fa-user-o\"></i>"), profile_path(current_user.id), class: "nav-link" %>
+      <%= link_to "Logout" , destroy_user_session_path, method: :delete, class: "nav-link" %>
   </a>
 </div>

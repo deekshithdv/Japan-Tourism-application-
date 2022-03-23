@@ -1,1 +1,37 @@
-Hello
+
+<div class="posts">
+  <div class="row">
+    <div class="col-8">
+      <% @posts.each do |post| %>
+        <section class="post">
+          <!-- post view -->
+
+          <div class="user">
+            <div class="avatar">
+                <%= image_tag("https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp")%>
+            </div>
+            <div class="username">
+              <%=link_to post.user.username, profile_path(post.user.id), class: "username" %>
+            </div>
+          </div>
+          
+            <div class="wrapper">
+              <%=image_tag post.files[0] , :width => '100%' %>
+            </div>
+
+
+          <div class="description">
+          <% if post.user.id == current_user.id %>
+            <%= link_to  raw("<i class=\"fa fa-trash-o \"></i>"), post, :method => :delete, :confirm => "Are you sure?", :style=> 'float:right;font-size:12px;'%>
+          <%end%>
+          <%= post.caption %><br/>
+          
+          
+          
+          </div>
+        </section>
+      <% end %> 
+    </div>
+    
+  </div>
+</div>

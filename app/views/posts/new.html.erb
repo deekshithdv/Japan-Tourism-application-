@@ -1,22 +1,13 @@
-<%= form_with(model: @post) do |form| %>
-  <div class="row">
-    <div class="span6 offset3">
-    <%= form.label :files %>
-   <%= form.file_field :files, multiple: true %>
+<div class="card mx-auto text-center" id= "authcard">
+  <div style="padding:20px">
+    <h2 style="color:#CC0066;">New Post</h2><br/>
+    <%= form_with(model: @post) do |form| %>
+      <%= form.file_field :files, multiple: true, placeholder: 'Username', class: "form-control" %><br/>
+      <%= form.text_field :title, placeholder: 'Title', class: "form-control" %><br/>
+      <%= form.text_area :caption, placeholder: 'Caption', class: "form-control"%><br/>
+      <%= form.text_area :location, placeholder: 'Location', class: "form-control"%><br/>
+      <%= form.text_field :user_id, value: current_user.id, class:'d-none'%>
+      <%= form.submit "Create Post", class: "btn btn-large btn-primary" %>
+    <% end %>
   </div>
-
-<div class="span6 offset3">
-   <%= form.label :title %>
-    <%= form.text_area :title %>
-    
-    <%= form.label :caption %>
-    <%= form.text_area :caption %>
-
-    <%= form.label :location %>
-    <%= form.text_area :location %>
-    <%= form.text_field :user_id, value: current_user.id, class:'d-none'%>
 </div>
-
-  </div>
-  <%= form.submit "Create Post", class: "btn btn-large btn-primary" %>
-<% end %>
