@@ -37,7 +37,9 @@
               <% @post.each do |post| %>
                 <div class="col-4">
                   <div>
+                  <%=link_to post_path(post) do %>
                       <%= image_tag(post.files[0], class:"w-100 rounded-3")%>
+                      <%end%>
                   </div>
                 </div>
               <%end%>
