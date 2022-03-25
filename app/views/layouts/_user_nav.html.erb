@@ -21,7 +21,6 @@
     <button class="btn btn-outline-success" type="submit">Search</button>
   </form>
   <a class="nav-item">
-      <%= link_to raw("<i class=\"fa fa-user-o\"></i>"), profile_path(current_user.id), class: "nav-link" %>
-      <%= link_to "Logout" , destroy_user_session_path, method: :delete, class: "nav-link" %>
+      <%= link_to raw("<i class=\"fa fa-lg fa-user-o\"></i>"), profile_path(current_user.id), class: "nav-link" %>
   </a>
 </div>

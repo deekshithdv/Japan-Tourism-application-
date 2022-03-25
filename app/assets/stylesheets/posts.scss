@@ -68,6 +68,7 @@
     display: flex;
     padding: 10px 0;
     border-bottom: 1px solid #efefef;
+    background-color:#CC0066;
     .avatar{
       width: 40px;
       height: 40px;
@@ -81,7 +82,7 @@
     }
     .username{
       padding-top: 15px;
-      color: #262626;
+      color: #fff;
       font-size: 14px;
       font-weight: 600;
       &:hover{
