@@ -1,27 +1,32 @@
+<div class="title">
+  <%= @post.title %>
+</div>
 <div class="post-show row">
   <div class="col-md-8">
     <%=image_tag @post.files[0], class: 'image' %>
   </div>
 
   <div class="col-md-4">
-    <div class="user">
-      <div class="avatar">
-        <%= link_to profile_path(@post.user) do %>
-            <%= image_tag("https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp")%>
-        <% end %>
-      </div>
-      <%= link_to @post.user.username, profile_path(@post.user), class: 'username' %>
-    </div>
     
-      
-    <div class="description">
-      <%= @post.caption %>
-      <p class="text-muted", style="font-size:10px;">posted <%=time_ago_in_words @post.created_at%> ago</p>
-      <% if @post.user.id == current_user.id %>
-        <%= link_to  raw("<i class=\"fa fa-trash-o \"></i>"), @post, :method => :delete, :confirm => "Are you sure?", :style=> 'float:right;font-size:15px;'%>
-      <%end%>
-    </div>
+    
+      <div class="location">
+        <span>
+          Address: 
+        </span>
+          <%= @post.location %>
+      </div>
+      <div class="geo">
+        Geo location using google maps (Yet to be developed)
+      </div>
+   
   
 
   </div>
+  <div class="description">
+  <%= @post.caption %>
+  <p class="text-muted", style="font-size:10px;">posted <%=time_ago_in_words @post.created_at%> ago</p>
+  <% if @post.user.id == current_user.id %>
+    <%= link_to  raw("<i class=\"fa fa-trash-o \"></i>"), @post, :method => :delete, :confirm => "Are you sure?", :style=> 'float:right;font-size:15px;'%>
+  <%end%>
+</div>
 </div>

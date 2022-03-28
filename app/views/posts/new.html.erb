@@ -4,7 +4,7 @@
     <%= form_with(model: @post) do |form| %>
       <%= form.file_field :files, multiple: true, class: "form-control" %><br/>
       <%= form.text_field :title, placeholder: 'Title', class: "form-control" %><br/>
-      <%= form.select :category, ['adventure', 'beach', 'cultural', 'wildlife', 'food'] %><br/><br/>
+      <%= form.select :category, ['adventure', 'beach', 'cultural', 'wildlife', 'food'], class:"form-control" %><br/><br/>
       <%= form.text_area :caption, placeholder: 'Caption', class: "form-control"%><br/>
       <%= form.text_area :location, placeholder: 'Location', class: "form-control"%><br/>
       <%= form.text_field :user_id, value: current_user.id, class:'d-none'%>

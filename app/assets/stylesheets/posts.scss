@@ -3,94 +3,130 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .posts{
-      margin-left: 100px;
-    .post{
-      border: 1px solid #efefef;
-      margin: 60px 0;
-      border-radius: 3px;
-      .user{
-        border-bottom: 1px solid #efefef;
-        display: flex;
-        .avatar{
-          img{
-            height: 30px;
-            width: 30px;
-            border-radius:50%;
-            margin: 8px;
-            border: 1px solid #efefef;
-            border-radius: 50%;
-          }
-        }
-        .username{
-          padding-top: 13px;
-          color: #CC0066;
-          font-size: 14px;
-          font-weight: 600;
-        }
-      }
-      
-      .description{
-        border-top: 1px solid #efefef;
-        padding: 20px;
-        text-align: left;
-        color: #CC0066;
-        i{
-          font-size: 20px;
-        }
-        i:hover{
-          color: #555;
-        }
-        }
-      
-      
-    }
-}
-
-.follower-suggetions{
-  text-align: left;
-  margin-top: 60px;
-  background: #FBF9F9;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-}
-
-.post-show{
-  margin: 30px 5px 0;
-  border: 1px solid #dbdbdb;
-  .col-md-8{
-    padding: 0;
-    .image{
-      width: 100%;
-    }
-  }
+  margin-left: 100px;
+.post{
+  border: 1px solid #efefef;
+  margin: 60px 0;
+  border-radius: 3px;
   .user{
-    display: flex;
-    padding: 10px 0;
     border-bottom: 1px solid #efefef;
-    background-color:#CC0066;
+    display: flex;
     .avatar{
-      width: 40px;
-      height: 40px;
-      margin: 8px;
       img{
-        width: 100%;
-        height: 100%;
+        height: 30px;
+        width: 30px;
+        border-radius:50%;
+        margin: 8px;
         border: 1px solid #efefef;
         border-radius: 50%;
       }
     }
     .username{
-      padding-top: 15px;
-      color: #fff;
+      padding-top: 13px;
+      color: #CC0066;
       font-size: 14px;
       font-weight: 600;
-      &:hover{
-        text-decoration: none;
-      }
     }
   }
+  
   .description{
-    padding: 15px 0;
+    border-top: 1px solid #efefef;
+    padding: 20px;
+    text-align: left;
+    color: #CC0066;
+    i{
+      font-size: 20px;
+    }
+    i:hover{
+      color: #555;
+    }
+    }
+  
+  
+}
+}
+
+.follower-suggetions{
+text-align: left;
+margin-top: 60px;
+background: #fdfcfc;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 6px;
+}
+
+.title{
+font-size: 30px;
+padding-top: 10px;
+padding-left: 20px;
+padding-bottom: 30px;
+color: #CC0066;
+font-family: "sans-serif";
+}
+
+.post-show{
+margin: 30px 5px 1px;
+width: 80%;
+
+padding-left: 20px;
+border: 1px solid #dbdbdb;
+border-radius: 12px;
+.col-md-8{
+padding: 15px;
+padding-left: 20px;
+.image{
+  width: 100%;
+}
+}
+.location{
+font-family: "sans-serif";
+padding-top: 20px;
+font-size: 24px;
+}
+.geo{
+border: 1px solid #dbdbdb;
+padding: 20px;
+margin-top: 30px;
+width: 80%;
+border-radius: 12px;
+}
+.user{
+font-family: "sans-serif";
+display: flex;
+// width: 50%;
+// border-bottom: 1px solid #efefef;
+// background-color:#CC0066;
+height: 50px;
+padding-bottom: 5px;
+// padding-left: 480px;
+.avatar{
+  width: 40px;
+  height: 40px;
+  margin: 8px;
+  
+  img{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #efefef;
+    border-radius: 50%;
   }
+}
+.username{
+  font-family: "sans-serif";
+  padding-top: 15px;
+  // padding-left: 500px;
+  color: rgb(0, 0, 0);
+  
+  font-size: 14px;
+  font-weight: 600;
+  &:hover{
+    text-decoration: none;
+  }
+}
+}
+.description{
+font-family: "sans-serif";
+// padding: 15px 0;
+padding-left: 20px;
+}
 }
