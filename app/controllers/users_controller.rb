@@ -13,5 +13,14 @@ class UsersController < ApplicationController
     def set_user
         @user = User.find(params[:id])
     end
+
+    def search
+        if params[:search].blank?  
+            redirect_to(dashboard_path, alert: "Empty field!") and return  
+        else  
+        @parameter = params[:search].downcase  
+        @results = Post.all.where("lower(category) LIKE :search", search: "%#{@parameter}%")  
+        end  
+    end
     
 end

@@ -1,26 +1,19 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-    <li>
-      <a class="nav-item"> 
-        <%= link_to "New post", new_post_path, class: "nav-link" %>
-      </a>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Sort by
-      </a>
-      
-      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item" href="#">Most liked place</a></li>
-        <li><a class="dropdown-item" href="#">Recently posted</a></li>
-      </ul>
-    </li>  
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
   </ul>
-  <form class="d-flex">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success" type="submit">Search</button>
-  </form>
+  <%= form_tag(search_page_path, :method => "get") do %>  
+  <div class="input-group">  
+    <%= search_field_tag :search, params[:search], placeholder: "Search category", class: "form-control" %>  
+    <%= button_tag "Search", :class => 'btn btn-outline-success',:name => nil, style: "margin-left:2px;" %> 
+  </div>  
+<% end %>
+  <div class="dropdown">
+  <i class="fa fa-lg fa-user-o dropbtn"></i> 
+  <div class="dropdown-content">
+  <%= link_to "Profile", profile_path(current_user.id) %>
+  <%= link_to "Logout" , destroy_user_session_path, method: :delete %>
+  </div>
+</div>
   <a class="nav-item">
-      <%= link_to raw("<i class=\"fa fa-lg fa-user-o\"></i>"), profile_path(current_user.id), class: "nav-link" %>
   </a>
 </div>

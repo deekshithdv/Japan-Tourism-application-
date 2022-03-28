@@ -1,10 +1,10 @@
-
 <div class="posts">
-  <div class="row">
-    <div class="col-7">
-    <%= link_to "New post", new_post_path, class: "btn", style: "float:right; background-color: #CC0066; color: #fff"; %>
-      <% @posts.each do |post| %>
-        <section class="post">
+    <h3>Search Result</h3>
+    <% if @results.empty? %>
+        <p> No results found </p>
+    <%else%> 
+      <% @results.each do |post| %>
+        <section class="post col-7">
           <!-- post view -->
 
           <div class="user">
@@ -31,14 +31,5 @@
         </section>
       <% end %> 
     </div>
-    <div class="col-3">
-      <div class="follower-suggetions">
-        <p class="text-muted"> Explore places</p>
-        <p> Tokyo </p>
-        <p> Kyoto </p> 
-        <p> Osaka</p>
-        <p> Hokkaido </p>
-      </div>
-    </div>
-  </div>
+    <% end %>
 </div>
