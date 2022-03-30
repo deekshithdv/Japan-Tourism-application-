@@ -14,6 +14,11 @@
   <% end %>
 
   <div>
+    <%= f.label :avatar,"Upload profile picture"%><br />
+    <%= f.file_field :avatar , class: "form-control" %>
+  </div><br/>
+
+  <div>
     <%= f.password_field :password, autocomplete: "new-password", placeholder: " New Password", class: "form-control" %>
   </div>
 <br/>
