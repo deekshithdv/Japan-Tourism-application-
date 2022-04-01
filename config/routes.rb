@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root 'users#home'
   get '/search' => 'users#search', :as => 'search_page'
   get "profile/:id"=> "users#profile",  as:  :profile
-  resources :posts, only: [:new, :create, :show , :destroy]
+  resources :posts, only: [:new, :create, :show , :destroy, :edit]
+  patch 'posts/:id', to: 'posts#update'
 end

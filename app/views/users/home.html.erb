@@ -6,7 +6,29 @@
         <section class="post">
           <!-- post view -->
             <div class="wrapper">
-              <%=image_tag post.files[0] , :width => '100%' %>
+              
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%=image_tag post.files[0], :width => '100%', class: "d-block w-100"%>
+    </div>
+    
+    
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
             </div>
 
             <div class="user">
@@ -26,10 +48,11 @@
 
             </div>
           <div class="description">
+          <%= post.caption %>
           <% if post.user.id == current_user.id %>
-            <%= link_to  raw("<i class=\"fa fa-trash-o \"></i>"), post, :method => :delete, :confirm => "Are you sure?", :style=> 'float:right;font-size:12px;'%>
+            <%= link_to raw("<i class=\"fa fa-edit\" aria-hidden=\"true\" style=\"float: right;\"></i>"), edit_post_path(post.id) %>
+            <%= link_to  raw("<i class=\"fa fa-trash-o \"></i>"), post, :method => :delete, :confirm => "Are you sure?", :style=> 'float:right;font-size:12px;margin-right:10px'%>
           <%end%>
-          <%= post.caption %><br/>
           </div>
         </section>
       <% end %> 

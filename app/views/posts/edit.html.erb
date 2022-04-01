@@ -1,0 +1,17 @@
+<div class="card mx-auto text-center" id= "authcard">
+<div style="padding:20px">
+<h2 style="color:#CC0066;">Edit post </h2>
+
+<%= form_for @post do |form| %>
+  <%= form.file_field :files, multiple: true, class: "form-control" %><br/>
+  <%= form.text_field :title, placeholder: 'Title', class: "form-control" %><br/>
+  <%= form.select :category, ['adventure', 'beach', 'cultural', 'wildlife', 'food'], class:"form-control" %><br/><br/>
+  <%= form.text_area :caption, placeholder: 'Caption', class: "form-control"%><br/>
+  <%= form.text_area :location, placeholder: 'Location', class: "form-control"%><br/>
+  <%= form.text_field :user_id, value: current_user.id, class:'d-none'%>
+  <%= form.submit "Create Post", class: "btn btn-large btn-primary" %>
+    
+<% end %>
+<%= link_to "Back", :back %>
+</div>
+</div>
