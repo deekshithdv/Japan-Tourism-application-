@@ -12,8 +12,9 @@
  *
  *= require_tree .
  *= require_self
- *= require font-awesome
+ *= require font-awesome  
  */
+ @import "bootstrap";
  
 
 
@@ -59,3 +60,12 @@
   }
   
 
+  .slick-next {
+    right: 10px !important;
+    z-index: 100;
+   }
+  
+  .slick-prev {
+    left: 10px !important;
+    z-index: 100;
+   }

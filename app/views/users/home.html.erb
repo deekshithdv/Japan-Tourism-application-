@@ -1,4 +1,11 @@
+<head>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+  .mySlides {display:none;}
+</style>
+</head>
 <div class="posts">
+
   <div class="row">
     <div class="col-7">
     <%= link_to "New post", new_post_path, class: "btn", style: "float:right; background-color: #CC0066; color: #fff"; %>
@@ -6,29 +13,38 @@
         <section class="post">
           <!-- post view -->
             <div class="wrapper">
-              
-              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%=image_tag post.files[0], :width => '100%', class: "d-block w-100"%>
-    </div>
-    
-    
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+              <% if post.files.count < 2 %>
+                <%=image_tag post.files[0], :width => '100%'%>
+              <%else%>  
+                <div class="w3-content w3-display-container">
+                  <% post.files.each do |photo| %>
+                    <%= image_tag photo, class:"mySlides w-100" %>
+                  <% end %>
+                
+                  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                </div>
+
+                <script>
+                  var slideIndex = 1;
+                  showDivs(slideIndex);
+
+                  function plusDivs(n) {
+                    showDivs(slideIndex += n);
+                  }
+
+                  function showDivs(n) {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides");
+                    if (n > x.length) {slideIndex = 1}
+                    if (n < 1) {slideIndex = x.length}
+                    for (i = 0; i < x.length; i++) {
+                      x[i].style.display = "none";  
+                    }
+                    x[slideIndex-1].style.display = "block";  
+                  }
+                </script>  
+              <% end %>        
             </div>
 
             <div class="user">
