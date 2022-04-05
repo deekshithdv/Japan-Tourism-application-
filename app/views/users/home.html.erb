@@ -59,9 +59,8 @@
               <div class="username">
                 <%=link_to post.user.username, profile_path(post.user.id), class: "username" %>
                 <br>
-                <%= post.location %>
+                <a href="https://maps.google.com/maps?q=<%= post.location %>"><%= post.location %></a>
               </div>
-
             </div>
           <div class="description">
           <%= post.caption %>

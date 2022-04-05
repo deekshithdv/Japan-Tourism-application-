@@ -26,6 +26,7 @@
       color: #CC0066;
       font-size: 14px;
       font-weight: 600;
+      font-family: sans-serif;
     }
   }
   
@@ -33,7 +34,8 @@
     border-top: 1px solid #efefef;
     padding: 20px;
     text-align: left;
-    color: #CC0066;
+    color: black;
+    font-family: sans-serif;
     i{
       font-size: 20px;
     }
@@ -64,67 +66,34 @@ color: #CC0066;
 }
 
 .post-show{
-margin: 30px 5px 1px;
-width: 80%;
+  margin: 30px 5px 1px;
+  width: 80%;
 
-padding-left: 20px;
-border: 1px solid #dbdbdb;
-border-radius: 12px;
-.col-md-8{
-padding: 15px;
-padding-left: 20px;
-.image{
-  width: 100%;
-}
-}
-.location{
-padding-top: 20px;
-font-size: 24px;
-}
-.geo{
-border: 1px solid #dbdbdb;
-padding: 20px;
-margin-top: 30px;
-width: 80%;
-border-radius: 12px;
-}
-.user{
-font-family: "sans-serif";
-display: flex;
-// width: 50%;
-// border-bottom: 1px solid #efefef;
-// background-color:#CC0066;
-height: 50px;
-padding-bottom: 5px;
-// padding-left: 480px;
-.avatar{
-  width: 40px;
-  height: 40px;
-  margin: 8px;
-  
-  img{
+  padding-left: 20px;
+  border: 1px solid #dbdbdb;
+  border-radius: 12px;
+  .col-md-8{
+    padding: 15px;
+    padding-left: 20px;
+    .image{
+      width: 100%;
+    }
+  }
+  .location{
+    padding-top: 20px;
+    font-size: 24px;
+  }
+  .geo{
+    border: 1px solid #dbdbdb;
+    padding: 20px;
+    margin-top: 30px;
     width: 100%;
-    height: 100%;
-    border: 1px solid #efefef;
-    border-radius: 50%;
+    border-radius: 12px;
   }
-}
-.username{
-  font-family: "sans-serif";
-  padding-top: 15px;
-  // padding-left: 500px;
-  color: rgb(0, 0, 0);
-  
-  font-size: 14px;
-  font-weight: 600;
-  &:hover{
-    text-decoration: none;
+  .description{
+    font-family: "sans-serif";
+    // padding: 15px 0;
+    padding-left: 20px;
+    font-size: 15px;
   }
-}
-}
-.description{
-font-family: "sans-serif";
-// padding: 15px 0;
-padding-left: 20px;
-}
 }

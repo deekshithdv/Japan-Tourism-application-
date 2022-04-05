@@ -21,6 +21,11 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
+    @hash = Gmaps4rails.build_markers(@post) do |post, marker|
+      marker.lat post.latitude
+      marker.lng post.longitude
+    end
   end
     
   def edit
@@ -41,6 +46,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-      params.require(:post).permit(:title, :caption, :user_id, :location, :category, files: [])
+      params.require(:post).permit(:title, :caption, :user_id, :location, :category,:longitude, :latitude, files: [])
   end
 end
