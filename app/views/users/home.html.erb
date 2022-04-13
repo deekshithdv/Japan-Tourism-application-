@@ -14,11 +14,11 @@
           <!-- post view -->
             <div class="wrapper">
               <% if post.files.count < 2 %>
-                <%=image_tag post.files[0], :width => '100%'%>
+                <%= link_to image_tag(post.files[0], :width => '100%'), post_path(post) %>
               <%else%>  
                 <div class="w3-content w3-display-container">
                   <% post.files.each do |photo| %>
-                    <%= image_tag photo, class:"mySlides w-100" %>
+                    <%= link_to image_tag(photo, class:"mySlides w-100"), post_path(post) %>
                   <% end %>
                 
                   <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
@@ -52,7 +52,7 @@
               <% if post.user.avatar.attached? %>
              <%= image_tag post.user.avatar %>
               <%else%>
-                <%= image_tag("https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp")%>
+               <%= image_tag("https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp")%>
               <%end %>
               
               </div>
