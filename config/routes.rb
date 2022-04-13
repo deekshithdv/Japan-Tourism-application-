@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get "profile/:id"=> "users#profile",  as:  :profile
   resources :posts, only: [:new, :create, :show , :destroy, :edit]
   patch 'posts/:id', to: 'posts#update'
+  get "suggestions"=> "users#suggestions", :as => "suggestions"
 end
